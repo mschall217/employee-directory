@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/mschall217/employee-directory/static/css/main.67057f61.chunk.css",
+    "main.js": "/mschall217/employee-directory/static/js/main.0f1fc3fc.chunk.js",
+    "main.js.map": "/mschall217/employee-directory/static/js/main.0f1fc3fc.chunk.js.map",
+    "runtime-main.js": "/mschall217/employee-directory/static/js/runtime-main.fb82cc48.js",
+    "runtime-main.js.map": "/mschall217/employee-directory/static/js/runtime-main.fb82cc48.js.map",
+    "static/css/2.61b4cb56.chunk.css": "/mschall217/employee-directory/static/css/2.61b4cb56.chunk.css",
+    "static/js/2.56869531.chunk.js": "/mschall217/employee-directory/static/js/2.56869531.chunk.js",
+    "static/js/2.56869531.chunk.js.map": "/mschall217/employee-directory/static/js/2.56869531.chunk.js.map",
+    "index.html": "/mschall217/employee-directory/index.html",
+    "static/css/2.61b4cb56.chunk.css.map": "/mschall217/employee-directory/static/css/2.61b4cb56.chunk.css.map",
+    "static/css/main.67057f61.chunk.css.map": "/mschall217/employee-directory/static/css/main.67057f61.chunk.css.map",
+    "static/js/2.56869531.chunk.js.LICENSE.txt": "/mschall217/employee-directory/static/js/2.56869531.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fb82cc48.js",
+    "static/css/2.61b4cb56.chunk.css",
+    "static/js/2.56869531.chunk.js",
+    "static/css/main.67057f61.chunk.css",
+    "static/js/main.0f1fc3fc.chunk.js"
+  ]
+}
