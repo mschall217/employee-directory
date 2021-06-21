@@ -1,23 +1,22 @@
 import React from "react";
 import "./style.css";
 
-const nav = (props) => {
+const Nav = (props) => {
 
     return(
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-    <form className="form-inline my-2 my-lg-0" onSubmit={props.handleFormSubmit}>
-      <input 
-      className="form-control mr-sm-2" 
-      type="search" 
-      placeholder="Search" 
-      aria-label="Search"
-      value={props.value}
-      onChange={props.handleInputChange}
-      />
-      <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-</nav>
+      <nav className="navbar navbar-light bg-light justify-content-center">
+      <form className="form-inline m-2" onSubmit={props.handleFormSubmit}>
+        <input
+          className="form-control"
+          value={props.value}
+          name="search"
+          onChange={props.handleInputChange}
+          type="search"
+          placeholder="Search"
+        />
+      </form>
+    </nav>
     )
 }
 
-export default nav;
+export default Nav;

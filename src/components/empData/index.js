@@ -7,7 +7,7 @@ import API from "../../utils/API"
 class EmpData extends Component {
     state = {
       search: "",
-      employees: [],
+      emps: [],
       filteredEmp: [],
       sortDir: this.initialSortDir,
     };
@@ -26,7 +26,7 @@ class EmpData extends Component {
       API.getEmp()
         .then((res) =>
           this.setState({
-            employees: res.data.results,
+            emps: res.data.results,
             filteredEmps: res.data.results,
           })
         )
@@ -85,18 +85,18 @@ class EmpData extends Component {
     filterEmp = (input) => {
       if (input) {
         this.setState({
-          filteredEmp: this.state.employees.filter((employee) => {
+          filteredEmp: this.state.employees.filter((emp) => {
             return (
-              employee.name.first
+              emp.name.first
                 .toLowerCase()
-                .concat(" ", employee.name.last.toLowerCase())
+                .concat(" ", emp.name.last.toLowerCase())
                 .includes(input) ||
-              employee.phone.includes(input) ||
-              employee.phone.replace(/[^\w\s]/gi, "").includes(input) ||
-              employee.email.includes(input) ||
-              employee.location.city
+              emp.phone.includes(input) ||
+              emp.phone.replace(/[^\w\s]/gi, "").includes(input) ||
+              emp.email.includes(input) ||
+              emp.location.city
               .toLowerCase()
-              .concat(" ", employee.location.state.toLowerCase())
+              .concat(" ", emp.location.state.toLowerCase())
               .includes(input)
             );
           }),
