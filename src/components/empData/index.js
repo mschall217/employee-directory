@@ -1,6 +1,6 @@
-import React, {Component } from "react";
+import React, { Component } from "react";
 import Nav from "../Nav"
-import EmpCard from "../EmpCard"
+import EmpTable from "../EmpTable"
 import API from "../../utils/API"
 
 
@@ -8,7 +8,7 @@ class EmpData extends Component {
     state = {
       search: "",
       emps: [],
-      filteredEmp: [],
+      filteredEmps: [],
       sortDir: this.initialSortDir,
     };
   
@@ -24,11 +24,11 @@ class EmpData extends Component {
     // When this component mounts, load random users as employees from https://randomuser.me/
     componentDidMount() {
       API.getEmp()
-        .then((res) =>
+        .then((response) =>
           this.setState({
-            emps: res.data.results,
-            filteredEmps: res.data.results,
-          })
+            emps: response.data.results,
+            filteredEmps: response.data.results,
+          }),
         )
         .catch((err) => console.log(err));
     }
@@ -47,17 +47,17 @@ class EmpData extends Component {
     // Sort with the key of specified object.
     // If key has more than one option sort by primary and optionally a secondary i.e. sort by last name, then first.
     sortBy = (key, primary = 0, secondary = 0) => {
-      let sortedEmp = this.state.filteredEmp;
+      let sortedEmp = this.state.filteredEmps;
       if (this.state.sortDir[key]) {
         this.setState({
-          filteredEmp: sortedEmp.reverse(),
+          filteredEmps: sortedEmp.reverse(),
           sortDir: {
             ...this.initialSortDir,
             [key]: this.state.sortDir[key] === "asc" ? "desc" : "asc",
           },
         });
       } else {
-        sortedEmp = this.state.filteredEmp.sort((a, b) => {
+        sortedEmp = this.state.filteredEmps.sort((a, b) => {
           a = a[key];
           b = b[key];
   
@@ -73,7 +73,7 @@ class EmpData extends Component {
         });
   
         this.setState({
-          filteredEmp: sortedEmp,
+          filteredEmps: sortedEmp,
           sortDir: {
             ...this.initialSortDir,
             [key]: "asc",
@@ -85,7 +85,7 @@ class EmpData extends Component {
     filterEmp = (input) => {
       if (input) {
         this.setState({
-          filteredEmp: this.state.employees.filter((emp) => {
+          filteredEmps: this.state.employees.filter((emp) => {
             return (
               emp.name.first
                 .toLowerCase()
@@ -102,7 +102,7 @@ class EmpData extends Component {
           }),
         });
       } else {
-        this.setState({ filteredEmp: this.state.employees });
+        this.setState({ filteredEmps: this.state.employees });
       }
     };
 
@@ -115,7 +115,7 @@ class EmpData extends Component {
               handleFormSubmit={this.handleFormSubmit}
             />
             <div className="container mt-4">
-              <EmpCard
+              <EmpTable
                   state={this.state}
                   sortBy={this.sortBy}
                   filterEmp={this.filterEmp}
