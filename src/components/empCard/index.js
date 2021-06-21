@@ -3,17 +3,30 @@ import "./style.css"
 
 const EmpCard = (props) => {
     return(
-        <tr>
-		      <th scope="row">1</th>
-		      <td class="w-25">
-			      <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/sheep-3.jpg" class="img-fluid img-thumbnail" alt="Sheep"></img>
-		      </td>
-		      <td>{props.fistName} {props.lastName}</td>
-		      <td>{props.email}</td>
-		      <td>{props.phone}</td>
-		      <td>{props.city}, {props.state}</td>
-		</tr>
-    )
+		<table>
+			<thead>
+				<tr>
+					<th scope="col">Image</th>
+					<th scope="col" data-field="name" data-sortable="true">
+						<span onClick={() => props.sortBy("name", "first", "last")}>Name</span>
+					</th>
+					<th scope="col">
+						<span onClick={() => props.sortBy("phone")}>Phone</span>					
+					</th>
+					<th scope="col">
+						<span onClick={() => props.sortBy("email")}>Email</span>					
+					</th>
+					<th scope="col">
+						<span onClick={() => props.sortBy("place", "city", "state")}>Place</span>					
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>
+		</table>
+
+	)
 }
 
 export default EmpCard;
