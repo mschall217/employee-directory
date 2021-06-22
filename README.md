@@ -26,7 +26,7 @@
 
   ## Gif 
 
-  ![gif]()
+  ![gif](/gif/employee-directory.gif)
   
   ## Support
   

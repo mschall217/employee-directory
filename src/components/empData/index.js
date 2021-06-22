@@ -20,7 +20,7 @@ class EmpData extends Component {
       };
     }
   
-    // When this component mounts, load random users as employees from https://randomuser.me/
+    // When this component mounts, load random users as employees from API
     componentDidMount() {
       API.getEmp()
         .then((response) =>
