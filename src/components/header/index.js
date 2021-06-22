@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css"
-
+//simple header generated saying emp directory
 const header = () => {
     return (
         <header>

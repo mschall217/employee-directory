@@ -10,13 +10,13 @@ tbody {
   max-height: 65vh;
 }
 
-thead,
-tbody tr {
+thead, tbody tr {
   display: table;
   width: 100%;
   table-layout: fixed;
 }
 
+/* overflow keeps the email from messing up the column or running into the next one */
 .email {
   overflow-x: auto;
 }

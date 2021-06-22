@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import EmpTable from "../EmpTable"
 import API from "../../utils/API"
 
-
+// initlaizing the class of emp data 
 class EmpData extends Component {
     state = {
       search: "",
@@ -20,7 +20,8 @@ class EmpData extends Component {
       };
     }
   
-    // When this component mounts, load random users as employees from API
+    // When this component mounts, load random users from API
+
     componentDidMount() {
       API.getEmp()
         .then((response) =>
@@ -43,7 +44,7 @@ class EmpData extends Component {
       event.preventDefault();
     };
   
-    // sorting with key key of object.
+    // sorting with key of object.
     //source from a cool article about sorting columns  
           //https://www.smashingmagazine.com/2020/03/sortable-tables-react/
     sortBy = (key, primary = 0, secondary = 0) => {
@@ -72,7 +73,7 @@ class EmpData extends Component {
             return a.localeCompare(b);
           }
         });
-  
+        //setting the new state to sort by ascending 
         this.setState({
           filteredEmps: sortedEmp,
           sortDir: {
@@ -108,6 +109,7 @@ class EmpData extends Component {
     };
 
     render() {
+      //renders the table component and uses the states, sortby, and filter paramaters we set up above
         return (
             <>
             <div className="container mt-4">
